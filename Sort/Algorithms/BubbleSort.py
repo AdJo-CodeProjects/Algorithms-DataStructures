@@ -57,8 +57,3 @@ def optimized_bubblesort(array):
                 array[i+1]=tmp
                 ntmp = ntmp+1
         n=ntmp
-
-array = [4,2,0,5,1,7]
-optimized_bubblesort(array)
-print(array)
-print(my_bubblesort([3,0,4,1,2]))
