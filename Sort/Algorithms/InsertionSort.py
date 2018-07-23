@@ -32,8 +32,25 @@ def insertion_sort(array):
     for i in range (0,len(sorted)):
         tmp = sorted[i]
         pos = i          
+        #Moving elements from array [0...i-1]
+        #greater than key to one pos ahead (right)
         while pos > 0 and sorted[pos-1] > tmp:
             sorted[pos] = sorted[pos-1]
             pos = pos-1
         sorted[pos] = tmp
-    return sorted                   
+    return sorted
+
+def insertion_sort_rec(array,n):
+    #base case
+    if n <= 1:
+        return
+    insertion_sort_rec(array,n-1)
+    #Inserting last element at correct position in sorted array
+    last = array[n-1]
+    j=n-2
+    #Move elements from array [0...i-1]
+    #greater than key to one pos ahead (to the right)
+    while j>=0 and array[j]>last:
+        array[j+1] = array [j]
+        j=j-1
+    array[j+1]=last
